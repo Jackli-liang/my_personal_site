@@ -1,0 +1,26 @@
+
+<h5>最新</h5>
+<div class="list-group">
+
+    {% for post in recent_post_list %}
+        <a href="{{ post.get_absolute_url }}" class="list-group-item list-group-item-action">
+             <i class="fas fa-chevron-right"></i>&nbsp;
+            {{ post.title }}</a>
+    {% empty %}
+        <div class="no-post">暂无文章!</div>
+    {% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+<h5>标签</h5>
+<div class="list-group">
+    {% for tag in tags %}
+        <a href="{% url 'article:tag' tag.pk %}" class="list-group-item list-group-item-action">
+            <i class="fas fa-chevron-right"></i>&nbsp;
+            {{ tag.name }}</a>
+    {% empty %}
+        <div class="no-archives">暂无标签!</div>
+    {% endfor %}
+</div>

@@ -1,0 +1,54 @@
+<!-- 载入静态文件 -->
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<!-- 网站主语言 -->
+<html lang="zh-cn">
+
+<head>
+    <!-- 网站采用的字符编码 -->
+    <meta charset="utf-8">
+    <!-- 预留网站标题的位置 -->
+    <title>{% block title %}{% endblock %}</title>
+    <!-- 引入bootstrap的css文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- 引入monikai.css,代码高亮显示 -->
+    <link rel="stylesheet" href="{% static 'md_css/monokai.css' %}">
+    <!-- 引入font awesome -->
+    <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+>
+
+</head>
+
+<body>
+    <!-- 引入导航栏 -->
+    {% include 'header.html' %}
+    <!-- 预留具体页面的位置 -->
+    {% block content %}{% endblock content %}
+    {% block right %}{% endblock right %}
+    <!-- 引入注脚 -->
+    {% include 'footer.html' %}
+    <!-- bootstrap.js 依赖 jquery.js 和popper.js，因此在这里引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- 引入bootstrap的js文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- 用Jquery动态加载了Bootstrap的表格样式-->
+    <!-- 引入layer.js,增加web弹窗事件 -->
+    <script src="{% static 'layer/layer.js' %}"></script>
+    <script>
+    $('div#article_body table').addClass('table table-bordered');
+    $('div#article_body thead').addClass('thead-light');
+    </script>
+
+    <!-- 底部回到顶部 -->
+    {% include 'back_to_top_func.html' %}
+
+    <!-- 新增为script填充 -->
+    {% block script %}{% endblock script %}
+
+</body>
+</html>
