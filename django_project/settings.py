@@ -121,10 +121,10 @@ DATABASES = {
     # }
     'default':{
             'ENGINE':'django.db.backends.mysql',
-            'NAME':'django_my_blog',
-            'USER':'root',
-            'PASSWORD':'123456',
-            'HOST':'localhost',
+            'NAME':'personal_site',
+            'USER':'liang',
+            'PASSWORD':'19980402',
+            'HOST':'192.168.0.101',
             'PORT':'3306',
             }
 }
@@ -168,10 +168,10 @@ USE_TZ = True
 
 # 静态文件的配置
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR,'static')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, "static"),
+#)
 
 # 媒体文件的配置
 MEDIA_URL = '/media/'
